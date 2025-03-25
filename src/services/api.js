@@ -466,4 +466,33 @@ export const getProductDetailWithHealth = async (productId) => {
   }
 };
 
+// 스케줄 관련 API
+export const createSchedule = async (scheduleData) => {
+  return api.post("/schedules", scheduleData);
+};
+
+export const getAllSchedules = async () => {
+  return api.get("/schedules");
+};
+
+export const getDailySchedules = async (date) => {
+  return api.get(`/schedules/daily${date ? `?date=${date}` : ''}`);
+};
+
+export const getWeeklySchedules = async (weekStart) => {
+  return api.get(`/schedules/weekly${weekStart ? `?weekStart=${weekStart}` : ''}`);
+};
+
+export const getScheduleById = async (scheduleId) => {
+  return api.get(`/schedules/${scheduleId}`);
+};
+
+export const updateSchedule = async (scheduleId, scheduleData) => {
+  return api.put(`/schedules/${scheduleId}`, scheduleData);
+};
+
+export const deleteSchedule = async (scheduleId) => {
+  return api.delete(`/schedules/${scheduleId}`);
+};
+
 export default api;
