@@ -71,8 +71,12 @@ const Header = () => {
           <div className="flex items-center space-x-8">
             <Link to="/" className="text-gray-700 hover:text-teal-500 font-medium">홈</Link>
             <Link to="/notices" className="text-gray-700 hover:text-teal-500 font-medium">공지사항</Link>
+            <Link to="/reviews" className="text-gray-700 hover:text-teal-500 font-medium">리뷰</Link>
             {isLoggedIn && (
-              <Link to="/favorites" className="text-gray-700 hover:text-teal-500 font-medium">즐겨찾기</Link>
+              <>
+                <Link to="/favorites" className="text-gray-700 hover:text-teal-500 font-medium">즐겨찾기</Link>
+                <Link to="/schedule" className="text-gray-700 hover:text-teal-500 font-medium">복용일정</Link>
+              </>
             )}
           </div>
 
